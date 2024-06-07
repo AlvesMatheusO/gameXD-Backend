@@ -22,5 +22,5 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     })
 })
 
-app.listen(5555, () => console.log('Server online')
+app.listen(5698, () => console.log('Server online')
 )
