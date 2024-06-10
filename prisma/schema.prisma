@@ -42,6 +42,7 @@ model Game {
   id String @id @default(uuid())
   name String
   description String
+  company String
   poster String
 
   category Category @relation(fields: [category_id], references: [id])
