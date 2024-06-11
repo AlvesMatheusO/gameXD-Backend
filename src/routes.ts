@@ -7,6 +7,8 @@ import { DetailsUserController } from './controllers/user/DetailsUserController'
 import { CreateCategoryController } from './controllers/category/CreateCategoryController';
 import { ListCategoryController } from './controllers/category/ListCategoryController';
 import { CreateGameController } from './controllers/game/CreateGameController';
+import { ListbyCategoryController } from './controllers/game/ListbyCategoryController';
+import { CreateReviewController } from './controllers/review/CreateReviewController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 import uploadConfig from './config/multer';
@@ -30,5 +32,9 @@ router.get('/categories', isAuthenticated, new ListCategoryController().handle)
 // Games Routes
 router.post('/game', isAuthenticated, upload.single('file'), new CreateGameController().handle)
 
+router.get('/category_games', isAuthenticated, new ListbyCategoryController().handle)
+
+// Review Routes
+router.post('/review', isAuthenticated, new CreateReviewController().handle)
 
 export { router };
