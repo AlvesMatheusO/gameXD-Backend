@@ -9,6 +9,7 @@ import { ListCategoryController } from './controllers/category/ListCategoryContr
 import { CreateGameController } from './controllers/game/CreateGameController';
 import { ListbyCategoryController } from './controllers/game/ListbyCategoryController';
 import { CreateReviewController } from './controllers/review/CreateReviewController';
+import { DeleteReviewController } from './controllers/review/DeleteReviewController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 import uploadConfig from './config/multer';
@@ -36,5 +37,6 @@ router.get('/category_games', isAuthenticated, new ListbyCategoryController().ha
 
 // Review Routes
 router.post('/review', isAuthenticated, new CreateReviewController().handle)
+router.delete('/deleteReview', isAuthenticated, new DeleteReviewController().handle)
 
 export { router };
