@@ -10,6 +10,7 @@ import { CreateGameController } from './controllers/game/CreateGameController';
 import { ListbyCategoryController } from './controllers/game/ListbyCategoryController';
 import { CreateReviewController } from './controllers/review/CreateReviewController';
 import { DeleteReviewController } from './controllers/review/DeleteReviewController';
+import { ListLastReviewsController } from './controllers/feed/ListLastReviewsController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 import uploadConfig from './config/multer';
@@ -17,6 +18,9 @@ import uploadConfig from './config/multer';
 const router = Router();
 
 const upload = multer(uploadConfig.upload("./tmp"));
+
+//Feed Route
+router.get('/', new ListLastReviewsController().handle)
 
 // Users Routes
 router.post('/users', new CreateUserController().handle)

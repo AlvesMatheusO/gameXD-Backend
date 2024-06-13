@@ -21,6 +21,8 @@ model User {
   password String
   profilePicture String? 
   banner String?
+  following String?
+  followers String?
   created_at DateTime? @default(now())
 
   reviews Review[]
